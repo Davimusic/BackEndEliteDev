@@ -1,3 +1,6 @@
+Integrantes:
+German David Fajardo
+
 # BackEndEliteDev
 Backend proyecto Ciclo 4 equipo EliteDev
 
