@@ -1,4 +1,4 @@
-# BackEndEliteDev
+# CursoMintic Desarrollo de aplicaciones Web
 Backend proyecto Ciclo 4 equipo EliteDev
 
 ● Módulo de gestión de usuarios.
