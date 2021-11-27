@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 # CursoMintic Desarrollo de aplicaciones Web
+
 =======
 Integrantes:
 German David Fajardo
