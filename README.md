@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 # CursoMintic Desarrollo de aplicaciones Web
+=======
+Integrantes:
+German David Fajardo
+
+# BackEndEliteDev
+>>>>>>> DaviMusicXD
 Backend proyecto Ciclo 4 equipo EliteDev
 
 ● Módulo de gestión de usuarios.
