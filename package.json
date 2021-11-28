@@ -1,0 +1,22 @@
+{
+  "name": "BackEndEliteDev",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jjortiz016/BackEndEliteDev.git",
+  "author": "EliteDeV <jjortiz016@misena.edu.co>",
+  "license": "MIT",
+  "type":"module",
+  "scripts": {
+     "start": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "apollo-server": "^3.5.0",
+    "apollo-server-core": "^3.5.0",
+    "apollo-server-express": "^3.5.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "graphql": "^16.0.1",
+    "mongoose": "^6.0.13",
+    "nodemon": "^2.0.15"
+  }
+}

@@ -41,6 +41,11 @@ build/Release
 node_modules/
 jspm_packages/
 
+#donenv environment variables file
+
+.env
+.env.text
+
 # TypeScript v1 declaration files
 typings/
 
