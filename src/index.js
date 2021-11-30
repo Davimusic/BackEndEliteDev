@@ -28,11 +28,13 @@ import resolvers from './resolvers/index.js'
 
 //inicialiazr las variables de entorno
 dotenv.config();
+
+//conectar a la base de datos
 connect();
 
-const startApolloServer = async (typeDefs, resolvers) => { //typeDefs que en este caso es el schema y resolver
+const startApolloServer = async (typeDefs, resolvers) => { //funcion asincrona con 2 parametros typeDefs que en este caso es el schema y resolver
     const app = express(); //creamos una app con express
-    const httpServer= http.createServer(app);
+    const httpServer= http.createServer(app);  //creamos un servidor para pasarlo al plugin PluginDrainHttpServer
     const server = new ApolloServer({
         typeDefs,
         resolvers,

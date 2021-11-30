@@ -1,0 +1,69 @@
+// MongoDB Playground
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+const database = 'DBPROYECTO';
+const collection = 'usuarios';
+
+// The current database to use.
+use(database);
+
+
+
+db.createCollection( collection,
+  {
+    correo: String,
+    identificacion: String,
+    nombre: String,
+    contraseña: String,
+    rol: String,
+    estado: String,
+   
+  }
+)
+/*
+db.users.insertOne({'correo':'jjortizx@gmail.com', 
+'identificacion':'16836610',
+'nombre':'Jhon Jairo Ortiz',
+'contraseña':'1234',
+'rol': 'admin',
+'estado':'Autorizado'})*/
+
+/*
+db.usuarios.insertOne({'correo':'pedro@gmail.com', 
+'identificacion':'7859222',
+'nombre':'Pedro Rodriguez',
+'contraseña':'12345',
+'rol': 'admin',
+'estado':'Pendiente'})  */
+/*
+db.usuarios.insertMany([{'correo':'maria@gmail.com', 
+'identificacion':'8552221',
+'nombre':'Maria Ruiz',
+'contraseña':'45698',
+'rol': 'Estudiante',
+'estado':'Pendiente'},
+{'correo':'lucia@gmail.com', 
+'identificacion':'256389',
+'nombre':'Lucia Rojas',
+'contraseña':'255588',
+'rol': 'lider',
+'estado':'No autorizado'},
+{'correo':'jjortizx@gmail.com', 
+'identificacion':'16836610',
+'nombre':'Jhon Jairo Ortiz',
+'contraseña':'1234',
+'rol': 'admin',
+'estado':'Autorizado'}
+
+])*/
+
+
+//db.usuarios.deleteOne({_id: ObjectId("619ac7b1518ba8796ceb18f7")})
+
+/*db.usuarios.updateOne({_id: ObjectId("619ac75a0f03b8328943b7b0")},
+{$set:{contraseña:'4321'}}
+)*/
+
+db.usuarios.find()
+
+//db.usuarios.findOne({_id: ObjectId("619ac75a0f03b8328943b7b0")})

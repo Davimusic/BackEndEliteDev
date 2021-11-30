@@ -1,0 +1,46 @@
+// MongoDB Playground
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+const database = 'DBPROYECTO';
+const collection = 'gestion_avances';
+
+// The current database to use.
+use(database);
+
+// Create a new collection.
+/*
+db.createCollection( collection, {
+  validator:{
+        $jsonSchema: {
+      
+        required: ["id_proyecto","fecha_avance","descripcion"],
+       
+        properties:{
+            id_proyecto:{
+                bsonType: 'objectId'
+            },
+             fecha_avance: {
+                bsonType: 'date'
+            },
+
+        
+           descripcion: {
+                 bsonType: 'string'
+            },
+             
+            
+            observaciones: {
+                 bsonType: 'string'
+            }
+
+        }
+        }
+     }
+  })
+*/
+
+  db.gestion_avances.insertOne( { 'id_proyecto': db.proyectos.findOne({nom_proyecto:'Desarrollo web3'}, {_id: 1})._id,  
+       'fecha_avance': new Date (),
+       'descripcion' : 'Creacion de la base de datos no relacional en mongo db',
+       'observaciones': 'Muy bien estructurada'
+      })
