@@ -4,40 +4,31 @@ import express from 'express';
 import http from 'http'
 import dotenv from 'dotenv'
 
-const typeDefs = gql`
- 
-  type Book {
-    title: String
-    author: String
-  }
-
-  
-  type Query {
-    books: [Book]
-  }
-`;
+//middlewares
+import validateAccess from './middlewares/access.middlewares.js'
 
 
-const books = [
-    {
-      title: 'The Awakening',
-      author: 'Kate Chopin',
-    },
-    {
-      title: 'City of Glass',
-      author: 'Paul Auster',
-    },
-  ];
 
-  const resolvers = {
-    Query: {
-      books: () => books,
-    },
-  };
+//utilities
+import connect from './database';
+
+
+
+
+//typeDefs
+import typeDefs from './schema/index.js'
+
+
+
+//resolvers
+import resolvers from './resolvers/index.js'
+
+
 
 
 //inicialiazr las variables de entorno
 dotenv.config();
+connect();
 
 const startApolloServer = async (typeDefs, resolvers) => { //typeDefs que en este caso es el schema y resolver
     const app = express(); //creamos una app con express
