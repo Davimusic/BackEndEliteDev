@@ -36,7 +36,7 @@ const books = [
   };
 
 
-
+//inicialiazr las variables de entorno
 dotenv.config();
 
 const startApolloServer = async (typeDefs, resolvers) => { //typeDefs que en este caso es el schema y resolver
