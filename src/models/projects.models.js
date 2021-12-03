@@ -2,35 +2,49 @@ import mongoose from "mongoose";
 const {Schema} = mongoose;
 
 const projectsSchema = new Schema({
-    correo:{
+    nom_proyecto:{
         type: String,
         required: true,
     },
-    identificacion:{
-        type: String,
+    obj_gen: {
+        type: Object,
         required: true,
     },
-    nombre:{
-        type: String,
+
+   obj_esp: { 
+        type: [Object],
         required: true,
     },
-    contraseña:{
-        type: String,
+    presupuesto: {
+      type: Number,
+      required: true,
+    },
+    fecha_inicio: {
+        type: Date, 
         required: true,
     },
-    rol:{
-        type: String,
+
+    fecha_fin: {
+        type: Date,
         required: true,
     },
-    estado:{
-        type: String,
+    doc_lider:{
+        type: Schema.ObjectId,
         required: true,
     },
+    estado: {
+      type: String,
+      enum: ['Activo', 'Inactivo'],
+      required: true,
+    },
+
+    fase : {
+        type: String,
+    }
 
 
 });
 
-const Projects = new mongoose.model('usuarios', projectsSchema);
+const Projects = new mongoose.model('proyectos', projectsSchema);
 
 export default Projects;
-
