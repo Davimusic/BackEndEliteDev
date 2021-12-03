@@ -1,3 +1,4 @@
+// qui utilizamo el express operator para clonar lo objetos que bienen del resolver
 import projectResolver from "./project.resolver.js";
 
 //const { Query: projectQueries, Mutation: ProjectMutatios, ...ProjectRest} = projectResolver;

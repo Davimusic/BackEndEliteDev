@@ -17,7 +17,7 @@ const projectType = gql `
     }
 ` ; //type Project es un objeto compuesto los nombre de los campos deben concidir con los de la base de datoa para que no de error
 
-const enums = gql`
+const enums = gql`          
    #Enum for status values - estado
    enum ProjectStatus{
        Activo
@@ -40,6 +40,9 @@ const queries = gql `
   type Query {
     project(_id:ID): Project
   }
+  type Query {
+    proyectByName(nom_proyecto: String!): Project
+  }
 
 `;
 // COMO SE LLAMEN LOS QUERY Y LOS MUTATIOS SE DEBE LLAMAR EN LOS RESOLVERS
@@ -59,7 +62,7 @@ const inputs = gql `
         fecha_inicio: String!
         fecha_fin: String!
         estado: ProjectStatus!
-        fase: Phase!
+        fase: Phase
        }
 `
 
