@@ -43,24 +43,27 @@ const queries = gql `
   type Query {
     proyectByName(nom_proyecto: String!): Project
   }
-
+   
 `;
+//en caso de que el mismo email este envarios registro la consulta devolvera un arreglo entonces quedari proyectByName(nom_proyecto: String!): [Project]
 // COMO SE LLAMEN LOS QUERY Y LOS MUTATIOS SE DEBE LLAMAR EN LOS RESOLVERS
 const mutations = gql`
    type Mutation {
        addProject(input: AddProjectInput!): Project 
+       
    }
 
 `;
-///OJO:revisar ya que puede esta malo el nombre para input
+
 const inputs = gql `
   input AddProjectInput {
     nom_proyecto: String!
         obj_gen: String!
-        obj_esp: String!
+        obj_esp: [String]!
         presupuesto: Float!
         fecha_inicio: String!
         fecha_fin: String!
+        doc_lider: ID!
         estado: ProjectStatus!
         fase: Phase
        }

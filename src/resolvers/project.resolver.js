@@ -13,16 +13,16 @@ const project = async (parent, args, context, info) => { // funcion projects se 
 };
 //00:41
 const proyectByName = async (parent, args, context, info) => {
-  const projectbyname = await Projects.findOne({nom_proyecto : args.nom_proyecto});
+  const projectbyname = await Projects.findOne({nom_proyecto : args.nom_proyecto});  // se utiliza find si va a devolver varios registros, find devuelve un arreglo
   return projectbyname;
 }
 
 
 
 const addProject = async (parent, args, context, info) =>{  // funcion addProject llama igual que en schema
-    let project = new Projects(args.input); //instancia del modelo de project
-    project = await Projects.save();
-    return project;
+    let newproject = new Projects(args.input); //instancia del modelo de project
+    project = await newproject.save();
+    return newproject;
 
 }
 
