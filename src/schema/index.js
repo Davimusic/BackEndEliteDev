@@ -1,6 +1,8 @@
 import projectSchema from "./project.schema.js";
 
-export default{
+export default[
+    ...projectSchema,
 
-    ...projectSchema;
-}
+]
+
+    

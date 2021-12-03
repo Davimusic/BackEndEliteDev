@@ -1,16 +1,16 @@
-import { ApolloServer, gql } from 'apollo-server-express';
+import { ApolloServer } from 'apollo-server-express';
 import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core';
 import express from 'express';
 import http from 'http'
 import dotenv from 'dotenv'
 
 //middlewares
-import validateAccess from './middlewares/access.middlewares.js'
+//import validateAccess from './middlewares/access.middlewares.js'
 
 
 
 //utilities
-import connect from './database';
+import connect from './database.js';
 
 
 
@@ -36,7 +36,7 @@ const startApolloServer = async (typeDefs, resolvers) => { //funcion asincrona c
     const app = express(); //creamos una app con express
     const httpServer= http.createServer(app);  //creamos un servidor para pasarlo al plugin PluginDrainHttpServer
     const server = new ApolloServer({
-        typeDefs,
+        typeDefs,  //el typeDefs puede ser un string (objeto), un documentnode o un array de documentnode
         resolvers,
         plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
     });

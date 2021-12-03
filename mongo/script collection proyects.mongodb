@@ -55,6 +55,8 @@ use(database);
   }
    
  })*/
+
+
 /*
 db.proyectos.insertOne({'nom_proyecto':'Desarrollo web3',
 'obj_gen':'Enseñar desarrollo fullstack',
