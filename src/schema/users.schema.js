@@ -7,9 +7,9 @@ const userType = gql `
         correo: String!
         identificacion: String!
         nombre: String!
-        contraseña: String!
+        contrasena: String!
         rol: Rol!
-        estado: Status!
+        estado: String!
        
     }
 ` ; //type User es un objeto compuesto los nombre de los campos deben concidir con los de la base de datoa para que no de error
@@ -19,14 +19,11 @@ const enums = gql`
    #Enum for status values - estado
    enum Rol{
       Estudiante
-      Líder
+      Lider
       Administrador
 
     }
-   enum Status{
-       Activo
-       Inactivo
-   }   
+  
 `;
 
 const queries = gql `
@@ -45,9 +42,10 @@ const queries = gql `
 `;
 //en caso de que el mismo email este envarios registro la consulta devolvera un arreglo entonces quedari proyectByName(nom_proyecto: String!): [Project]
 // COMO SE LLAMEN LOS QUERY Y LOS MUTATIOS SE DEBE LLAMAR EN LOS RESOLVERS
+
 const mutations = gql`
    type Mutation {
-      addUser(input: AddUserInput!): Project 
+      addUser(input: AddUserInput!): User 
        
    }
 
@@ -58,15 +56,15 @@ const inputs = gql `
         correo: String!
         identificacion: String!
         nombre: String!
-        contraseña: String!
+        contrasena: String!
         rol: Rol!
-        estado: Status!
+        estado: String!
        }
-`
+`;
 
 
 export default[
-  projectType,
+  userType,
   enums,
   queries,
   mutations,

@@ -15,7 +15,7 @@ const usersSchema = new Schema({
         type: String,
         required: true,
     },
-    contraseña:{
+    contrasena:{
         type: String,
         required: true,
     },
@@ -26,7 +26,7 @@ const usersSchema = new Schema({
     estado:{
         type: String,
         required: true,
-    },
+    }
 
 
 });

@@ -9,10 +9,11 @@ const allUsers = async (parent, args, context, info) => { // funcion allUsers se
   
 
 const user = async (parent, args, context, info) => { // funcion userr se llama igual que en schema, siempre 4 argumentos, el parent es el padre del query que se esta haciendo, arg argumentos o parametros como id, context funciones de validacion, info
-    const user = await Users.findById(args._id); //devuelve el usuario por id
-    return user;
+    const userbyid = await Users.findById(args._id); //devuelve el usuario por id
+    return userbyid;
    
    };
+
 
 
 //00:41
@@ -25,8 +26,8 @@ const userByCorreo = async (parent, args, context, info) => {
 
 const addUser = async (parent, args, context, info) =>{  // funcion addProject llama igual que en schema
     let newuser = new Users(args.input); //instancia del modelo de project
-    newproject = await newproject.save();
-    return newproject;
+    newuser = await newuser.save();
+    return  newuser;
 
 }
 

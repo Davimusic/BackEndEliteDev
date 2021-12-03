@@ -13,7 +13,7 @@ export default{
     },
     Mutation:{
         ...projectMutations,
-        ...userMutations
+        ...userMutations,
     },
     ...ProjectRest,
     ...UserRest
