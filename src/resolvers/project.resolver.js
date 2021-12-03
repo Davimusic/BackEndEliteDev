@@ -21,7 +21,7 @@ const proyectByName = async (parent, args, context, info) => {
 
 const addProject = async (parent, args, context, info) =>{  // funcion addProject llama igual que en schema
     let newproject = new Projects(args.input); //instancia del modelo de project
-    project = await newproject.save();
+    newproject = await newproject.save();
     return newproject;
 
 }
