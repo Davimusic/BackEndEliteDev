@@ -1,47 +1,45 @@
 import { gql } from 'apollo-server';
 //EL SCHEMA ES LA INTERFAZ ENTRE EL CLIENTE Y EL SERVIDOR
-const projectType = gql `
-#Project - proyectos
-    type Project {
-        _id: ID!,
-        nom_proyecto: String!
-        obj_gen: String!
-        obj_esp: [String]!
-        presupuesto: Float!
-        fecha_inicio: String!
-        fecha_fin: String!
-        doc_lider: ID!
-        estado: ProjectStatus!
-        fase: Phase
-        
+const userType = gql `
+#Users - usuarios
+    type User {
+        _id: ID!
+        correo: String!
+        identificacion: String!
+        nombre: String!
+        contraseña: String!
+        rol: Rol!
+        estado: Status!
+       
     }
-` ; //type Project es un objeto compuesto los nombre de los campos deben concidir con los de la base de datoa para que no de error
+` ; //type User es un objeto compuesto los nombre de los campos deben concidir con los de la base de datoa para que no de error
+
 
 const enums = gql`          
    #Enum for status values - estado
-   enum ProjectStatus{
+   enum Rol{
+      Estudiante
+      Líder
+      Administrador
+
+    }
+   enum Status{
        Activo
        Inactivo
-   }
-   enum Phase{
-       Iniciando
-       En desarrollo
-       Terminado
-
-   }
+   }   
 `;
 
 const queries = gql `
-  #Query todos los proyectos
+  #Query todos los usuarios
   type Query {
-    allProjects: [Project]
+    allUsers: [User]
   }
   
   type Query {
-    project(_id:ID): Project
+    user(_id:ID): User
   }
   type Query {
-    proyectByName(nom_proyecto: String!): Project
+    userByCorreo(correo: String!): User
   }
    
 `;
@@ -49,23 +47,20 @@ const queries = gql `
 // COMO SE LLAMEN LOS QUERY Y LOS MUTATIOS SE DEBE LLAMAR EN LOS RESOLVERS
 const mutations = gql`
    type Mutation {
-       addProject(input: AddProjectInput!): Project 
+      addUser(input: AddUserInput!): Project 
        
    }
 
 `;
 
 const inputs = gql `
-  input AddProjectInput {
-    nom_proyecto: String!
-        obj_gen: String!
-        obj_esp: [String]!
-        presupuesto: Float!
-        fecha_inicio: String!
-        fecha_fin: String!
-        doc_lider: ID!
-        estado: ProjectStatus!
-        fase: Phase
+  input AddUserInput {
+        correo: String!
+        identificacion: String!
+        nombre: String!
+        contraseña: String!
+        rol: Rol!
+        estado: Status!
        }
 `
 
