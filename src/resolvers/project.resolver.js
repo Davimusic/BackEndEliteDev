@@ -27,6 +27,8 @@ const addProject = async (parent, args, context, info) =>{  // funcion addProjec
 }
 
 
+
+
 //objeto
 export default {  //exportamos el objeto allProjects es una propiedad cuyo valor es una funcion llamada allProjects que es lo mismo que allUsers : value el values seria la constante que tiene una funcion
   projectQueries:{

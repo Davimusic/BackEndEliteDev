@@ -5,12 +5,12 @@ const projectType = gql `
     type Project {
         _id: ID!,
         nom_proyecto: String!
-        obj_gen: String!
+        obj_gen: String
         obj_esp: [String]!
-        presupuesto: Float!
+        presupuesto: Float
         fecha_inicio: String!
         fecha_fin: String!
-        doc_lider: ID!
+        doc_lider: ID
         estado: ProjectStatus!
         fase: Phase
         
@@ -57,13 +57,13 @@ const mutations = gql`
 
 const inputs = gql `
   input AddProjectInput {
-    nom_proyecto: String!
-        obj_gen: String!
-        obj_esp: [String]!
-        presupuesto: Float!
+       nom_proyecto: String!
+        obj_gen: String
+        obj_esp: [String]
+        presupuesto: Float
         fecha_inicio: String!
         fecha_fin: String!
-        doc_lider: ID!
+        doc_lider: ID
         estado: ProjectStatus!
         fase: Phase
        }

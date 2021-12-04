@@ -13,14 +13,14 @@ db.createCollection( collection, {
   validator:{
         $jsonSchema: {
       
-        required: ["id_proyecto","fecha_avance","descripcion"],
+        required: ["fecha_avance","descripcion"],
        
         properties:{
             id_proyecto:{
                 bsonType: 'objectId'
             },
              fecha_avance: {
-                bsonType: 'date'
+                bsonType: 'string'
             },
 
         
@@ -38,9 +38,11 @@ db.createCollection( collection, {
      }
   })
 */
-
+/*
   db.gestion_avances.insertOne( { 'id_proyecto': db.proyectos.findOne({nom_proyecto:'Desarrollo web3'}, {_id: 1})._id,  
-       'fecha_avance': new Date (),
+       'fecha_avance': '12-05-2021',
        'descripcion' : 'Creacion de la base de datos no relacional en mongo db',
        'observaciones': 'Muy bien estructurada'
       })
+*/
+db.gestion_avances.find();

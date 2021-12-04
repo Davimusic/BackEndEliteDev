@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
-const {Schema} = mongoose;
+const { Schema } = mongoose;
+
+
 
 const projectsSchema = new Schema({
     nom_proyecto:{
@@ -8,16 +10,16 @@ const projectsSchema = new Schema({
     },
     obj_gen: {
         type: Object,
-        required: true,
+       // required: true,
     },
 
    obj_esp: { 
         type: [Object],
-        required: true,
+       // required: true,
     },
     presupuesto: {
       type: Number,
-      required: true,
+     //  required: true,
     },
     fecha_inicio: {
         type: Date, 
@@ -30,7 +32,7 @@ const projectsSchema = new Schema({
     },
     doc_lider:{
         type: Schema.ObjectId,
-        required: true,
+        //required: true,
     },
     estado: {
       type: String,
