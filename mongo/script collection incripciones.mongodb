@@ -39,15 +39,14 @@ db.createCollection( collection, {
      }
   })
 
-  */
- /*
+ */
 db.inscripciones.insertOne( { 'id_proyecto': db.proyectos.findOne({nom_proyecto:'Desarrollo web3'}, {_id: 1})._id,  
        'id_estudiante': db.usuarios.findOne({correo:'maria@gmail.com'}, {_id: 1})._id,   
        'estado':'Activo',
        'fecha_ingreso': new Date (),
        'fecha_egreso': new Date (new Date().getTime() + 60*24*60*60000)
       })
-*/
+
 
 /*
   db.inscripciones.insertMany([
@@ -65,6 +64,6 @@ db.inscripciones.insertOne( { 'id_proyecto': db.proyectos.findOne({nom_proyecto:
        'fecha_ingreso': new Date (),
        'fecha_egreso': new Date (new Date().getTime() + 60*24*60*60000)
       }
-])
-*/
-db.inscripciones.find();
+])*/
+/*
+db.inscripciones.find();*/
