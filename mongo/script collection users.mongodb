@@ -7,8 +7,8 @@ const collection = 'usuarios';
 // The current database to use.
 use(database);
 
-
 /*
+
 db.createCollection( collection,
   {
     correo: String,
@@ -19,7 +19,7 @@ db.createCollection( collection,
     estado: String,
    
   }
-)*/
+);*/
 /*
 db.users.insertOne({'correo':'jjortizx@gmail.com', 
 'identificacion':'16836610',
@@ -35,7 +35,7 @@ db.usuarios.insertOne({'correo':'pedro@gmail.com',
 'contrasena':'12345',
 'rol': 'Administrador',
 'estado':'Pendiente'})  */
-/*
+
 db.usuarios.insertMany([{'correo':'maria@gmail.com', 
 'identificacion':'8552221',
 'nombre':'Maria Ruiz',
@@ -47,7 +47,7 @@ db.usuarios.insertMany([{'correo':'maria@gmail.com',
 'nombre':'Lucia Rojas',
 'contrasena':'255588',
 'rol': 'Lider',
-'estado':'No autorizado'},
+'estado':'No_autorizado'},
 {'correo':'jjortizx@gmail.com', 
 'identificacion':'16836610',
 'nombre':'Jhon Jairo Ortiz',
@@ -55,7 +55,7 @@ db.usuarios.insertMany([{'correo':'maria@gmail.com',
 'rol': 'Administrador',
 'estado':'Autorizado'}
 
-]) */
+]) 
 
 
 //db.usuarios.deleteOne({_id: ObjectId("619ac7b1518ba8796ceb18f7")})
@@ -64,6 +64,6 @@ db.usuarios.insertMany([{'correo':'maria@gmail.com',
 {$set:{contrasena:'4321'}}
 )*/
 
-db.usuarios.find()
+//db.usuarios.find()
 
 //db.usuarios.findOne({_id: ObjectId("619ac75a0f03b8328943b7b0")})

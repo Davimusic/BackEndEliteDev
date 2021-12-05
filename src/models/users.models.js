@@ -5,11 +5,11 @@ const {Schema} = mongoose;
 const usersSchema = new Schema({
     correo:{
         type: String,
-        required: true,
+        unique: true,
     },
     identificacion:{
         type: String,
-        required: true,
+        unique: true,
     },
     nombre:{
         type: String,
@@ -21,11 +21,11 @@ const usersSchema = new Schema({
     },
     rol:{
         type: String,
-        required: true,
+        enum: ['Estudiante','Lider','Administrador']
     },
     estado:{
         type: String,
-        required: true,
+        enum: ['Pendiente','Autorizado','No_autorizado']
     }
 
 

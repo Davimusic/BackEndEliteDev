@@ -9,7 +9,7 @@ const userType = gql `
         nombre: String!
         contrasena: String!
         rol: Rol!
-        estado: String!
+        estado: Status!
        
     }
 ` ; //type User es un objeto compuesto los nombre de los campos deben concidir con los de la base de datoa para que no de error
@@ -23,6 +23,11 @@ const enums = gql`
       Administrador
 
     }
+     enum Status{
+      Pendiente
+      Autorizado
+      No_autorizado
+     }
   
 `;
 

@@ -30,6 +30,100 @@ use(database);
             },
         
             fecha_inicio: {
+                bsonType: 'string'
+            },
+
+            fecha_fin: {
+                bsonType: 'string'
+            },
+
+            doc_lider:{
+                bsonType: 'objectId'
+            },
+            
+           
+            estado: {
+            enum: ['Activo', 'Inactivo']
+            },
+
+            fase : {
+            enum: ['Iniciando', 'En_desarrollo', 'Terminado',null]
+            }
+
+         }
+     }
+  }
+   
+ })
+*/
+
+/*
+db.proyectos.insertOne({'nom_proyecto':'Desarrollo web3',
+'obj_gen':'Enseñar desarrollo fullstack',
+'obj_esp':["formar personas en programación","crear programadores competitivos", "Brindar oportunidades laborales"],
+'fecha_inicio': new Date (),
+'presupuesto': Decimal128('2000000'),
+'fecha_fin': new Date (new Date().getTime() + 60*24*60*60000),
+'doc_lider': db.usuarios.findOne({correo:'lucia@gmail.com'}, {_id: 1})._id,
+'estado':'Activo',
+'fase ': 'Iniciando'
+
+   });*/
+
+
+//db.proyectos.find()
+
+ db.proyectos.insertMany([
+     {'nom_proyecto':'Desarrollo python',
+      'obj_gen':'Enseñar desarrollo aplicaciones de escritorio',
+      'obj_esp':["formar personas en programación","crear programadores competitivos", "Brindar oportunidades laborales"],
+      'presupuesto': Decimal128('3000000'),
+       'fecha_inicio': '2021-10-23',
+       'fecha_fin': '2021-12-25',
+      'doc_lider': db.usuarios.findOne({correo:'lucia@gmail.com'}, {_id: 1})._id,
+      'estado':'Activo',
+       'fase ': 'Iniciando'
+   },
+     {'nom_proyecto':'Ingles',
+      'obj_gen':'Enseñar Ingles',
+      'obj_esp':["comprension de lectura","escritura","pronunciación"],
+      'presupuesto': Decimal128('15000000'),
+      'fecha_inicio': '2019-04-23',
+       'fecha_fin': '2019-08-25',
+       'doc_lider': db.usuarios.findOne({correo:'maria@gmail.com'},{_id: 1})._id,
+       'estado':'Activo',
+       'fase ': 'Iniciando'
+   }
+ 
+])
+//db.proyectos.find();
+/*activo, inactivo
+iniciando, en desarrollo, terminado (nula por defecto)
+*/
+/*eJEMPLO coleccion campos tipo date
+db.createCollection( collection, {
+  validator:{
+        $jsonSchema: {
+      
+        required: ["nom_proyecto","fecha_inicio","fecha_fin"],
+       
+        properties:{
+            nom_proyecto:{
+                bsonType: 'string'
+            },
+            
+            obj_gen: {
+            bsonType:'string'
+            },
+
+            obj_esp: {        
+                bsonType:'array'
+            },
+            presupuesto: {
+                bsonType:'decimal'
+            },
+        
+            fecha_inicio: {
                 bsonType: 'date'
             },
 
@@ -54,10 +148,9 @@ use(database);
      }
   }
    
- })*/
-
-
-/*
+ })
+ 
+ EJEMPLO COMO LLENAR UN CAMPO TIPO DATE
 db.proyectos.insertOne({'nom_proyecto':'Desarrollo web3',
 'obj_gen':'Enseñar desarrollo fullstack',
 'obj_esp':["formar personas en programación","crear programadores competitivos", "Brindar oportunidades laborales"],
@@ -68,36 +161,12 @@ db.proyectos.insertOne({'nom_proyecto':'Desarrollo web3',
 'estado':'Activo',
 'fase ': 'Iniciando'
 
-   });*/
+   });
 
-
-//db.proyectos.find()
-/*
- db.proyectos.insertMany([
-     {'nom_proyecto':'Desarrollo python',
-      'obj_gen':'Enseñar desarrollo aplicaciones de escritorio',
-      'obj_esp':["formar personas en programación","crear programadores competitivos", "Brindar oportunidades laborales"],
-      'presupuesto': Decimal128('3000000'),
-       'fecha_inicio': new Date (),
-       'fecha_fin': new Date (new Date().getTime() + 60*24*60*60000),
-      'doc_lider': db.usuarios.findOne({correo:'lucia@gmail.com'}, {_id: 1})._id,
-      'estado':'Activo',
-       'fase ': 'Iniciando'
-   },
-     {'nom_proyecto':'Ingles',
-      'obj_gen':'Enseñar Ingles',
-      'obj_esp':["comprension de lectura","escritura","pronunciación"],
-      'presupuesto': Decimal128('15000000'),
-      'fecha_inicio': new Date (),
-       'fecha_fin': new Date (new Date().getTime() + 60*24*60*60000),
-       'doc_lider': db.usuarios.findOne({correo:'maria@gmail.com'},{_id: 1})._id,
-       'estado':'Activo',
-       'fase ': 'Iniciando'
-   }
  
-])*/
-db.proyectos.find();
-/*activo, inactivo
-iniciando, en desarrollo, terminado (nula por defecto)
-*/
-
+ 
+ 
+ 
+ 
+ 
+ */

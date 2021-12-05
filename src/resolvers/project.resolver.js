@@ -1,7 +1,8 @@
 // COMO SE LLAMEN LOS QUERY Y LOS MUTATIOS EN EL SCHEMA SE DEBE LLAMAR EN LOS RESOLVERS
 import Projects from "../models/projects.models.js";
+import Users from "../models/users.models.js";
 
-const allProjects = async (parent, args, context, info) => { // funcion allProjects se llama igual que en schema
+const allProjects = async () => { // funcion allProjects se llama igual que en schema
   const project= await Projects.find();
   return project;  
 };
@@ -26,7 +27,11 @@ const addProject = async (parent, args, context, info) =>{  // funcion addProjec
 
 }
 
-
+const leader = async (parent, args, context, info) => { // funcion userr se llama igual que en schema, siempre 4 argumentos, el parent es el padre del query que se esta haciendo, arg argumentos o parametros como id, context funciones de validacion, info
+  const userbyid = await Users.findById(parent.doc_lider); //devuelve el usuario por id ojo  con el parent
+  return userbyid;
+ 
+ };
 
 
 //objeto
@@ -36,9 +41,13 @@ export default {  //exportamos el objeto allProjects es una propiedad cuyo valor
     project,
     proyectByName
   },
+  Project:{
+    leader,
+   },
   projectMutations:{
     addProject,
-  }
+  },
+  
 
   
 };

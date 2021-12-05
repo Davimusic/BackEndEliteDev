@@ -13,9 +13,15 @@ const projectType = gql `
         doc_lider: ID
         estado: ProjectStatus!
         fase: Phase
+        leader: User
         
     }
+
+    
 ` ; //type Project es un objeto compuesto los nombre de los campos deben concidir con los de la base de datoa para que no de error
+
+
+
 
 const enums = gql`          
    #Enum for status values - estado
@@ -25,7 +31,7 @@ const enums = gql`
    }
    enum Phase{
        Iniciando
-       En desarrollo
+       En_desarrollo
        Terminado
 
    }
@@ -42,6 +48,9 @@ const queries = gql `
   }
   type Query {
     proyectByName(nom_proyecto: String!): Project
+  }
+  type Query{
+    leader(doc_lider:ID): User
   }
    
 `;
