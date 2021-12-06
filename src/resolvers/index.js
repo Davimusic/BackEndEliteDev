@@ -21,6 +21,7 @@ export default{
     Mutation:{
         ...projectMutations,
         ...userMutations,
+        ...advanceMutations,
         ...inscriptionMutations,
     },
     ...ProjectRest,

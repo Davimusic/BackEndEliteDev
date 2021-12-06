@@ -38,11 +38,11 @@ db.createCollection( collection, {
      }
   })
 */
-/*
-  db.gestion_avances.insertOne( { 'id_proyecto': db.proyectos.findOne({nom_proyecto:'Desarrollo web3'}, {_id: 1})._id,  
+
+  db.gestion_avances.insertOne( { 'id_proyecto': db.proyectos.findOne({nom_proyecto:'Desarrollo python'}, {_id: 1})._id,  
        'fecha_avance': '12-05-2021',
        'descripcion' : 'Creacion de la base de datos no relacional en mongo db',
        'observaciones': 'Muy bien estructurada'
-      })
-*/
-db.gestion_avances.find();
+       })
+
+//db.gestion_avances.find();
