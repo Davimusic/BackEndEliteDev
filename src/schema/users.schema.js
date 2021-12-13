@@ -47,15 +47,40 @@ const queries = gql `
 `;
 //en caso de que el mismo email este envarios registro la consulta devolvera un arreglo entonces quedari proyectByName(nom_proyecto: String!): [Project]
 // COMO SE LLAMEN LOS QUERY Y LOS MUTATIOS SE DEBE LLAMAR EN LOS RESOLVERS
-
+/*
 const mutations = gql`
    type Mutation {
       addUser(input: AddUserInput!): User 
        
    }
 
+`;*/
+
+const mutations = gql`
+   type Mutation {
+      register(input: RegisterInput!): User 
+       
+   }
+
+   type Mutation {
+      login(correo: String!, contrasena: String!): String!
+   }
 `;
 
+
+const inputs = gql `
+  input RegisterInput {
+        correo: String!
+        identificacion: String!
+        nombre: String!
+        contrasena: String!
+        rol: Rol!
+      
+       }
+`;
+
+
+/*
 const inputs = gql `
   input AddUserInput {
         correo: String!
@@ -65,7 +90,7 @@ const inputs = gql `
         rol: Rol!
         estado: String!
        }
-`;
+`;*/
 
 
 export default[
