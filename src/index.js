@@ -7,7 +7,7 @@ import dotenv from 'dotenv'
 //middlewares
 //import validateAccess from './middlewares/access.middlewares.js'
 
-
+import validateAuthentication from './middlewares/authentication.middlewares.js'
 
 //utilities
 import connect from './database.js';
@@ -22,6 +22,7 @@ import typeDefs from './schema/index.js'
 
 //resolvers
 import resolvers from './resolvers/index.js'
+import { validate } from 'graphql';
 
 
 
@@ -39,6 +40,7 @@ const startApolloServer = async (typeDefs, resolvers) => { //funcion asincrona c
         typeDefs,  //el typeDefs puede ser un string (objeto), un documentnode o un array de documentnode
         resolvers,
         plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
+        context: async ({ req }) => await validateAuthentication(req), // le pasamos el resultado de una funcion,como parametro recivimos el request donde estan los header, tambien biene como parametro del response
     });
 
     await server.start(); // para esperar que el servidor express inicie para poder aplicar el Middleware de la aplicación

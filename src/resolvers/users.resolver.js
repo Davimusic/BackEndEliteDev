@@ -6,9 +6,11 @@ import { USER_STATUS } from "../constans/user.constants.js";
 
 
 
-const allUsers = async (parent, args, context, info) => { // funcion allUsers se llama igual que en schema
-    const users= await Users.find();
-    return users;  
+const allUsers = async (parent, args, { user,errorMessage }) => { // para validar el token para cumplir la funciona
+   if(!user){ //si el usuario no existe
+      throw new Error(errorMessage);
+    }
+     return await Users.find();
   };
   
 
@@ -61,9 +63,9 @@ const login = async (parent,args) => {
    }
  //con la siguiente funcion generamos el token, recibe tres parametros, el primero los datos del usuario, el segundo un string para encriptar, el tercer parametro las opciones
    const token = await jwt.sign( 
-      { userId: _id},
+      { userId: _id},  //este parametro sera utilizado por el middlewares authentication
       process.env.SECRET,
-      {expiresIn: "30m"}
+      {expiresIn: '30m'}
    );
 
    return token; //lo retorna al usuario
