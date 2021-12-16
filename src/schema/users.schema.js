@@ -38,8 +38,13 @@ const queries = gql `
   }
   
   type Query {
-    user(_id:ID): User
+    userById(_id:ID): User
   }
+
+  type Query {
+    user: User!
+  }
+
   type Query {
     userByCorreo(correo: String!): User
   }

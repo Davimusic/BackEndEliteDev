@@ -8,9 +8,10 @@ const validateAuthentication = async (req) => {
     const token = req.headers.authorization;
     try {
         const session = await jwt.verify(token, process.env.SECRET);
-        const user = await Users.findById(session.userId);
+        console.log(session.user);
+    
         return {
-            user,
+            user: session.user,
         }
     } catch (error){
         return {
