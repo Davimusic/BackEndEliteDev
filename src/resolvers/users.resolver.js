@@ -10,7 +10,7 @@ const allUsers = async (parent, args, { user,errorMessage }) => { // para valida
    if(!user){ //si el usuario no existe
       throw new Error(errorMessage);
     }
-    if(user.role !== ROLES.Administrador){ //si el rol es administrador puede enter a consultar todos los usuarios
+   if(user.rol !== ROLES.Administrador){ //si el rol es administrador puede enter a consultar todos los usuarios
       throw new Error('Acces denied')
     }
      return await Users.find();
