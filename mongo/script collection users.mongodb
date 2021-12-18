@@ -35,7 +35,7 @@ db.usuarios.insertOne({'correo':'pedro@gmail.com',
 'contrasena':'12345',
 'rol': 'Administrador',
 'estado':'Pendiente'})  */
-
+/*
 db.usuarios.insertMany([{'correo':'maria@gmail.com', 
 'identificacion':'8552221',
 'nombre':'Maria Ruiz',
@@ -56,7 +56,7 @@ db.usuarios.insertMany([{'correo':'maria@gmail.com',
 'estado':'Autorizado'}
 
 ]) 
-
+*/
 
 //db.usuarios.deleteOne({_id: ObjectId("619ac7b1518ba8796ceb18f7")})
 
@@ -64,6 +64,6 @@ db.usuarios.insertMany([{'correo':'maria@gmail.com',
 {$set:{contrasena:'4321'}}
 )*/
 
-//db.usuarios.find()
+db.usuarios.find()
 
 //db.usuarios.findOne({_id: ObjectId("619ac75a0f03b8328943b7b0")})
